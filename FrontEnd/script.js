@@ -17,6 +17,7 @@ async function addDivWorks() {
     // Récupération des works via la fonction getWorks
     let works = await getWorks();
     let divGallery = document.querySelector(".gallery");
+    divGallery.innerHTML = "";
     for (let i = 0; i < works.length; i++) {
         // Création du conteneur pour la photo et la description
         let figure = document.createElement("figure");
@@ -77,6 +78,7 @@ async function filterWorks(button) {
 
     button[1].addEventListener("click", () => {
         const worksObjects = works.filter(function (element) {
+            // filtrage et récupération des works avec la propriété categoryId égal à 1 uniquement
             return element.categoryId === 1;
         })
         const divGallery = document.querySelector(".gallery");

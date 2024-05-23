@@ -1,0 +1,60 @@
+:root {
+    --form-color: #3D3D3D;
+}
+
+.login {
+    font-weight: 600;
+}
+
+.login-infos {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+form {
+    width: 23.6rem;
+    font-size: 0.8rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--form-color);
+    padding: 5rem 0 20rem 0;
+}
+
+.form-title {
+    margin-bottom: 1rem;
+}
+
+.submit-container {
+    display: flex;
+}
+
+input[type="email"],
+input[type="password"] {
+    height: 2.5rem;
+    box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+input[type="submit"] {
+    border: none;
+    height: 2rem;
+    font-size: 0.8rem;
+    margin-top: 2rem;
+}
+
+.forgot-password {
+    color: var(--form-color);
+}
+
+.response {
+    color: rgb(214, 0, 0);
+    padding-bottom: 0.8rem;
+    text-align: center;
+}
+
