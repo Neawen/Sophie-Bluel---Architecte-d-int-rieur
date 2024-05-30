@@ -1,5 +1,10 @@
+:root {
+    --button-color: #1D6154;
+}
+
 .body {
     max-width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11,7 +16,7 @@
     display: flex;
     flex-direction: column;
     margin-top: 0;
-    align-items: center ;
+    align-items: center;
 }
 
 .header-edit {
@@ -21,19 +26,209 @@
     gap: 0.7rem;
     padding: 1.2rem;
     justify-content: center;
-    width: 100%; 
-    max-width: 1440px;
+    width: 100%;
 }
 
 .header-sophie {
-	display: flex;
-	justify-content: space-between;
-	margin: 50px 0; 
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 0;
     width: 1140px;
- } 
+}
 
 main {
     max-width: 1140px;
+}
+
+.modal {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-top: 8.5rem;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.modal-wrapper {
+    position: absolute;
+    top: 32rem; 
+    background-color: white;
+    width: 31.9rem;
+    border-radius: 0.6rem;
+    padding: 1.8rem;
+}
+
+.container-remove-modal{
+    display: flex;
+    align-items: end;
+}
+
+.container-remove-modal {
+    display: flex;
+    justify-content: end;
+}
+
+.remove-modal {
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.container-edit-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 4rem;
+}
+
+.modal-title {
+    color: black;
+    font-family: "Work Sans";
+    margin: 1rem 0 2.5rem 0;
+}
+
+.modal-gallery {
+    width: 100%;
+    border-bottom: #B3B3B3 solid 0.1rem;
+    margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-column-gap: 0.5rem;
+    grid-row-gap: 1.5rem;
+    padding-bottom: 3.6rem;
+}
+
+.container-works-modal {
+    position: relative;
+}
+
+.img-modal {
+    height: 5.7rem;
+}
+
+.works-trash {
+    position: absolute;
+    top: 0.4rem;
+    right: 0.4rem;
+    color: white;
+    font-size: 0.6rem;
+    padding: 0.2rem;
+    background-color: black;
+}
+
+.modal-button {
+    background: var(--button-color);
+    border: none;
+    border-radius: 3.7rem;
+    padding: 0.6rem;
+    color: white;
+    font-family: Syne;
+    cursor: pointer;
+    width: 14.8rem;
+    border-top: #B3B3B3 solid 0.1rem;
+}
+
+.container-remove-modal-and-back{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.container-add-photo {
+    background-color: #e2eff7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 0.1rem;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.back-modal {
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.button-second-view {
+    background-color: #A7A7A7;
+}
+
+.container-add-photo i {
+    font-size: 3.8rem;
+}
+
+.container-add-photo input[type="file"] {
+ display: none;
+}
+
+form input[type="text"] {
+    margin-bottom: 1rem;
+}
+
+form input[type="text"],
+form select {
+    background-color: white;
+    border: none;
+    box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+}
+
+label {
+    margin-bottom: 0.5rem;
+}
+
+.border-second-modal {
+    border-top: #B3B3B3 solid 0.1rem;
+    margin: 2.5rem 0 2rem 0;
+    width: 100%;
+}
+
+.modal-second-page {
+    display: none;
+    flex-direction: column;
+}
+
+.modal-add-photo {
+    color: #306685;
+    background-color: #CBD6DC;
+    border-radius: 3rem;
+    border: none;
+    padding: 0.5rem 1.8rem;
+    cursor: pointer;
+}
+
+.container-edit-modal p {
+    color: #444444;
+    font-size: 0.6rem;
+}
+
+.container-edit-modal h2 {
+    color: black;
+    font-family: "Work Sans";
+    margin-bottom: 1.5rem;
+}
+
+.container-edit-modal i {
+    color: #B9C5CC;
+}
+
+.photo-preview {
+    display: none;
+}
+
+form {
+ display: flex;
+ flex-direction: column;
+ width: 100%;
+}
+
+.form-response {
+    color: rgb(168, 0, 0);
+    margin-top: 1rem;
 }
 
 .projects {

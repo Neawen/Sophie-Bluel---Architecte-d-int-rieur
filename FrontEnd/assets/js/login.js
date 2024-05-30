@@ -4,18 +4,17 @@ form.addEventListener("submit", async (event) => {
 
     const email = document.querySelector("#email");
     const password = document.querySelector("#password");
+
     // send email & password value on api
     const resultRegister = await registerAdmin(email.value, password.value);
     console.log(resultRegister);
 
-    // check if email & password match
-    if (checkEmail(email) && checkPassword(password)) {
-        // if userId exist
-        if (resultRegister.userId) {
-            window.location.href = "admin.html";
-        } else {
-            console.log("Erreur.");
-        }
+    // if userId exist
+    if (resultRegister.userId) {
+        window.location.href = "admin.html";
+    } else {
+        errorMessage();
+        console.log("Erreur : " + resultRegister.status);
     }
 
     const token = resultRegister.token;
@@ -23,26 +22,6 @@ form.addEventListener("submit", async (event) => {
     localStorage.setItem("authToken", token);
     console.log(token);
 })
-
-function checkEmail(email) {
-    // if email value doesn't match string chain
-    if (email.value !== "sophie.bluel@test.tld") {
-        errorMessage();
-        return false;
-    } else {
-        return true;
-    }
-}
-
-function checkPassword(password) {
-    // if password value doesn't match string chain
-    if (password.value !== "S0phie") {
-        errorMessage();
-        return false;
-    } else {
-        return true;
-    }
-}
 
 function errorMessage() {
     let response = document.querySelector(".response");
@@ -76,6 +55,8 @@ async function registerAdmin(email, password) {
     })
 
     const resultRegister = await postAdmin.json();
+    // add status response to resultRegister
+    resultRegister.status = postAdmin.status;
     return resultRegister;
 }
 

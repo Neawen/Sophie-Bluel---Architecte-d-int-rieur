@@ -197,6 +197,11 @@ li a {
 	color: black;
 }
 
+ul img {
+	height: 1.1rem;
+	width: 1.1rem;
+}
+
 #introduction {
 	display: flex;
 	align-items: center;
