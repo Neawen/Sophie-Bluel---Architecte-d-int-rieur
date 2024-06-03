@@ -143,6 +143,10 @@ function addNewWork() {
         // send data from form in second modal
         sendNewWork(workTitle, workCategory, workImageInput)
         checkForm(workTitle, workCategory, workImageInput, buttonSubmit, form);
+        // renew tags form
+        workTitle.value = "";
+        workCategory.value = "";
+        workImageInput.value = "";
     });
 }
 
@@ -198,8 +202,6 @@ async function sendNewWork(workTitle, workCategory, workImageInput) {
         sendNewWorkMessage();
         // refresh gallery
         addDivWorks();
-        // renew Input type file
-        workImageInput.value = "";
     } else {
         console.log("Erreur : " + sendNewWork.status);
     }
@@ -278,7 +280,7 @@ function addSecondModal(modal) {
         secondModal.style.display = "flex";
     })
 
-    // cross to close the second modal
+    // trash can icon to close the second modal
     const secondRemoveModal = document.querySelector(".second-remove-modal");
     secondRemoveModal.addEventListener("click", () => {
         modal.style.display = "none";

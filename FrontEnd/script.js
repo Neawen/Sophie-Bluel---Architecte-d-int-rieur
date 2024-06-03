@@ -5,7 +5,7 @@ async function getWorks() {
     return works;
 }
 
-// Récupération des catégories pour les filtres dans l'api 
+// Récupération des catégories pour les filtres à partir de l'api 
 async function getCategories() {
     const categoriesJson = await fetch("http://localhost:5678/api/categories");
     const categories = await categoriesJson.json();
