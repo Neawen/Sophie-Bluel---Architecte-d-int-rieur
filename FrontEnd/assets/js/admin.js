@@ -38,6 +38,8 @@ setTimeout(() => {
     })
 
 
+
+
     // showing works in modal
     putWorksModal();
     // adding second modal view from button "add photo"
@@ -80,6 +82,7 @@ async function putWorksModal() {
     // get trash can icons on work in modal
     let worksTrash = document.querySelectorAll('.works-trash');
     for (let i = 0; i < worksTrash.length; i++) {
+        // store id of the work clicked
         const workId = works[i].id;
         worksTrash[i].addEventListener('click', () => {
             deleteWork(workId);
@@ -101,9 +104,10 @@ async function deleteWork(workId) {
 
     // if deleting work succeed
     if (deleteWork.ok) {
+        //refresh modal's works
         putWorksModal();
+        // Refresh gallery's works
         addDivWorks();
-
     } else {
         console.log("Erreur : " + deleteWork.status);
     }
